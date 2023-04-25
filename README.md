@@ -240,6 +240,43 @@ The badges (in two different verions) are saved at `public\badges`
 
 The numbers on the badge names are corresponding to the index that we gave them in the Firestore earlier
 
+## Running the survey tool locally
+
+To run the survey tool locally, you will need to follow these setps:
+
+Clone your forked repo (if not already done)
+
+### Create a service account
+
+To have all necessary permissions when running the survey tool, you will need to do the following:
+
+1. Go to [console.cloud.google.com](Google Cloud Console)
+2. Search for `IAM` and click on *IAM*
+3. On the left side, click on *Service accounts*
+4. Click on *CReate service account*
+5. Give it some name and add the "Editor" Role and save it
+6. In the list click on the three dots for the survey account and click *manage keys*
+7. Click on *Add Key*, then *Create new Key*, choose JSON and *Create*
+8. Save the file in the same folder as this README.md file
+
+### Create a local environment file
+
+1. Create a .env.local file in your root folder (ie the folder in which this README.md is in)
+2. Add this into the .env.local file:
+
+```env
+PROD=false
+SECRET_COOKIE_KEY=asdsafsdvevscsf23wef23re
+GOOGLE_APPLICATION_CREDENTIALS="The absolut path to your serviceAccountKey you downloaded"
+TABLE_ID=dev
+```
+
+## Todo
+
+- Test that all the steps actually work
+- Create templates to easier deploy on GCP
+- Document the code
+
 ## Contributing
 
 1. Fork it!
