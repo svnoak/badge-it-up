@@ -172,9 +172,11 @@ Next we need to set up a Cloud Function which will be triggered by Pub/Sub
 Make sure *Runtime* says `Node.js 18`
 For *Entrypoint* write `Actions`
 
-Now copy the code from the following gist and insert it into the code field:
+Now click on *index.js* and copy the code from this link and insert it into the code field:
 
 <https://gist.github.com/svnoak/baf46fedc507556e78a22e01d995848a>
+
+Click on *package.json* and paste the other part from the gist into the code field.
 
 Then click on *DEPLOY*
 
