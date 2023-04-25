@@ -14,6 +14,25 @@ Badge It Up - Survey tool offers a few key features:
 - Enables the respondent to opt-out afterwards
 - More to come...
 
+## Table of Contents
+
+- [Installation](#installation)
+  - [Create a new project](#create-a-new-project)
+  - [Set up Firestore](#set-up-firestore)
+  - [Set up PubSub](#set-up-pubsub)
+  - [Set up Cloud Functions](#set-up-cloud-functions)
+  - [Set up BigQuery](#set-up-bigquery)
+  - [Deploy the survey tool](#deploy-the-survey-tool)
+- [Modify Badges, texts etc](#modify-badges-texts-etc)
+- [Running the survey tool locally](#running-the-survey-tool-locally)
+  - [Create a service account](#create-a-service-account)
+  - [Create a local environment file](#create-a-local-environment-file)
+  - [Install dependencies and run it](#install-dependencies-and-run-it)
+- [Todo](#todo)
+- [Contributing](#contributing)
+- [Credits](#credits)
+- [License](#license)
+
 ## Installation
 
 The Survey tool can be hosted on any platform supporting NodeJS.
@@ -130,7 +149,7 @@ section (number) // This indicates the "page" the question will appear on
 question (map): "en" (map): description (string), title (string)
 ```
 
-### Set up Pub/Sub
+### Set up PubSub
 
 Next we need to activate Pub/Sub to be able to save our logs to another database
 
@@ -326,7 +345,7 @@ The thesis can be read here: INSERT LINK TO THESIS
 
 The MIT License (MIT)
 
-Copyright (c) 2015 Chris Kibble
+Copyright (c) 2023 Kim Siebeneicher and Edit Söderqvist
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
