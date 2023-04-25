@@ -337,9 +337,9 @@ This was implemented so that we could send the survey to multiple organisations 
 
 ## Credits
 
-Lead Developer - Kim Siebeneicher (@svnoak)
+Lead Developer - Kim Siebeneicher ([@svnoak](https://github.com/svnoak))
 
-Badge design and mechanics - Edit Söderqvist (@)
+Badge design and mechanics - Edit Söderqvist - ([LinkedIn](https://www.linkedin.com/in/editsoderqvist/))
 
 The thesis can be read here: INSERT LINK TO THESIS
 
