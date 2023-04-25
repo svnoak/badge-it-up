@@ -29,7 +29,7 @@ If you do not have a Google Account, create one.
 ### Create a new project
 
 You need to create a new project to be able to host and use all necessary services.
-For this guide we call our project "survey"
+For this guide we call our project `survey`
 
 For all other steps, you need to make sure you always have "survey" selected as your project
 
@@ -37,10 +37,10 @@ For all other steps, you need to make sure you always have "survey" selected as 
 
 As a database we use Firestore.
 
-1. In the search field at the top, write `firestore` and select the result that says "Firestore"
-2. Click on `Select Native Mode`
-3. For location, use the location preferred to you. For using the Survey Tool in Europe it is advised to use `eur3` for GDPR reasons
-4. Finally click on `Create Database`
+1. In the search field at the top, write `firestore` and select the result that says *Firestore*
+2. Click on *Select Native Mode*
+3. For location, use the location preferred to you. For using the Survey Tool in Europe it is advised to use *eur3* for GDPR reasons
+4. Finally click on *Create Database*
 
 Now we need to set up our database with some base collections:
 
@@ -48,34 +48,34 @@ Now we need to set up our database with some base collections:
 
 In this step we need to set up our collections properly to be able to load the data into the survey tool as well as save the data from our respondents
 
-1. Click on `START COLLECTION`
+1. Click on *START COLLECTION*
 2. A sidebar will be made visible where you have multiple fields to fill in.
-3. In `Collection ID` write "organisations"
-4. Simply click int eh field `Document ID` to generate a random DocumentID
+3. In *Collection ID* write `organisations`
+4. Simply click in the field *Document ID* to generate a random DocumentID
 
 5. Create three fields:
 
-    - `name` (type: string) = "Testorganisation" // The name of the organisation
-    - `gamified` (type number) = 0 // How many have gotten the gamified survey (updates automatically)
-    - `respondents` (type number) = 0 // How many have started the survey in total (updates automatically)
+    - `name` (type: string) = `Testorganisation` // The name of the organisation
+    - `gamified` (type number) = `0` // How many have gotten the gamified survey (updates automatically)
+    - `respondents` (type number) = `0` // How many have started the survey in total (updates automatically)
 
 #### **Respondents**
 
-1. Click on `START COLLECTION`
-2. In `Collection ID` write "respondents"
-3. Click on `Save`
+1. Click on *START COLLECTION*
+2. In *Collection ID* write `respondents`
+3. Click on *Save*
 4. Remove the created document in the collection
 
 The survey tool will take care of creating those documents for us when respondents fill out the survey
 
 #### **Badges**
 
-1. Click on `START COLLECTION`
-2. In `Collection ID` write "badges"
-3. Simply click int the field `Document ID` to generate a random DocumentID
+1. Click on *START COLLECTION*
+2. In *Collection ID* write `badges`
+3. Simply click int the field *Document ID* to generate a random DocumentID
 
 4. Create the following fields:
-    - `index` (type number) // Which place in the survey you want it to be
+    - `index` (type number) // This is the order you want the badges displayed, also will load the corresponding badge image
     - `badge` (type map)
 
 5. In `badge` you create another field called `en` (type map)
@@ -86,9 +86,9 @@ The survey tool will take care of creating those documents for us when responden
 
 #### **Questions**
 
-1. Click on `START COLLECTION`
-2. In `Collection ID` write "questions"
-3. Simply click int the field `Document ID` to generate a random DocumentID
+1. Click on *START COLLECTION*
+2. In *Collection ID* write `questions`
+3. Simply click int the field *Document ID* to generate a random DocumentID
 
 There are five different fields supported in the survey tool: "textfield", "numberfield", "multifield", "time" or "dropdown"
 
@@ -133,7 +133,7 @@ question (map): "en" (map): description (string), title (string)
 Next we need to activate Pub/Sub to be able to save our logs to another database
 
 1. We write `pubsub` in the searchfield and click on the first result "Pub/Sub"
-2. Click on "Create Topic"
+2. Click on *Create Topic*
 3. Give it a name eg `pubsub`
 4. Leave everything else on default and save
 
@@ -141,38 +141,38 @@ Next we need to activate Pub/Sub to be able to save our logs to another database
 
 Next we need to set up a Cloud Function which will be triggered by Pub/Sub
 
-1. Search for `cloud function` in the searchfield and click on "Cloud Functions"
-2. Click on "Create Function"
-3. Click on "Enable" in the bottom right corner
-4. Change "region" to any region in europe (or whatevery you prefer)
-5. At Trigger click on Edit and change to "Allow unauthenticated invocations"
-6. Click on save and then on next
+1. Search for `cloud function` in the searchfield and click on *Cloud Functions*
+2. Click on *Create Function*
+3. Click on *Enable* in the bottom right corner
+4. Change *region* to any region in europe (or whatevery you prefer)
+5. At Trigger click on *Edit* and change to "Allow unauthenticated invocations"
+6. Click on *save* and then on *next*
 
-Make sure "Runtime" says `Node.js 18`
-For Entrypoint write `Actions`
+Make sure *Runtime* says `Node.js 18`
+For *Entrypoint* write `Actions`
 
 Now copy the code from the following gist and insert it into the code field:
 
 <https://gist.github.com/svnoak/baf46fedc507556e78a22e01d995848a>
 
-Then click on DEPLOY
+Then click on *DEPLOY*
 
 ### Set up BigQuery
 
 Next we need to set up BigQuery which will keep our logs
 
 1. Search for `BigQuery` in the searchfield and click on "BigQuery"
-2. On the left side will be column called "EXPLORER", click on the three dots right of "survey-123123" (your numbers will be different)
-3. Click on "Create data set"
+2. On the left side will be column called *EXPLORER*, click on the three dots right of "survey-123123" (your numbers will be different)
+3. Click on *Create data set*
 4. Fill out the form like this:
 
-    - Data set ID: actions
+    - Data set ID: `actions`
     - Location type: This you can choose however you like, just keep in mind your local regulations about data storage (eg GDPR, recommended is "Region" and a european country of your chocie)
 
-5. Click on "Create Data Set"
-6. Click on the data set we created (actions) in the Explorer column
-7. On the top right, click on "CREATE TABLE"
-8. In "Table" write `dev`
+5. Click on *Create Data Set*
+6. Click on the data set we created (`actions`) in the *Explorer* column
+7. On the top right, click on *CREATE TABLE*
+8. In *Table* write `dev`
 
 9. At Schema, toggle to write as text and insert code from the following gist into the field:
 
@@ -190,10 +190,10 @@ Cloud Build will take the code from our github repository and make it possible f
 
 Cloud Run will then give us a link that we can send to our participants
 
-1. Search for `Cloud Run` in the searchfield and click on "Cloud Run"
-2. Click on "Create Service"
-3. Change the toggle to "Continously deploy new revisions from a source repository"
-4. Click on "Set up Cloud build"
+1. Search for `Cloud Run` in the searchfield and click on *Cloud Run*
+2. Click on *Create Service*
+3. Change the radiobutton to "Continously deploy new revisions from a source repository"
+4. Click on *Set up Cloud build*
 5. Choose your Repository Provider (if you simply forked it, use Github)
 6. Choose the repository for the survey tool (or click the link underneath the dropdown to allow Google Cloud to find it)
 7. Click on Next
@@ -211,7 +211,7 @@ Now we are looking at a sort of dashboard. When everything is done, there should
 
 Copy the Link (<https://survey-XXXXXXXXasdasd.run.app>) that is in the top
 
-Click on "Edit and Deploy new Revision"
+Click on *Edit and Deploy new Revision*
 Scroll down to "Environment variables"
 And add the following variables:
 
@@ -226,7 +226,7 @@ Name 4: DOMAIN
 Value 4: (the domain you just copied, but without https)
 ```
 
-Scroll all the way down and click on deploy
+Scroll all the way down and click on *deploy*
 
 ## Modify Badges, texts etc
 
