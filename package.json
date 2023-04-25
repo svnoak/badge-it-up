@@ -12,6 +12,7 @@
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@fontsource/roboto": "^4.5.8",
+    "@google-cloud/bigquery": "^6.2.0",
     "@google-cloud/pubsub": "^3.3.0",
     "@mui/icons-material": "^5.11.11",
     "@mui/material": "^5.11.12",
