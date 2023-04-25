@@ -59,6 +59,8 @@ In this step we need to set up our collections properly to be able to load the d
     - `gamified` (type number) = `0` // How many have gotten the gamified survey (updates automatically)
     - `respondents` (type number) = `0` // How many have started the survey in total (updates automatically)
 
+    **THIS DOCUMENT ID IS NEEDED TO ACCESS THE SURVEY LATER ON!**
+
 #### **Respondents**
 
 1. Click on *START COLLECTION*
@@ -240,6 +242,70 @@ The badges (in two different verions) are saved at `public\badges`
 
 The numbers on the badge names are corresponding to the index that we gave them in the Firestore earlier
 
+## Running the survey tool locally
+
+To run the survey tool locally, you will need to follow these setps:
+
+Clone your forked repo (if not already done)
+
+### Create a service account
+
+To have all necessary permissions when running the survey tool, you will need to do the following:
+
+1. Go to [console.cloud.google.com](Google Cloud Console)
+2. Search for `IAM` and click on *IAM*
+3. On the left side, click on *Service accounts*
+4. Click on *CReate service account*
+5. Give it some name and add the "Editor" Role and save it
+6. In the list click on the three dots for the survey account and click *manage keys*
+7. Click on *Add Key*, then *Create new Key*, choose JSON and *Create*
+8. Save the file in the same folder as this README.md file
+
+### Create a local environment file
+
+1. Create a .env.local file in your root folder (ie the folder in which this README.md is in)
+2. Add this into the .env.local file:
+
+```env
+PROD=false
+SECRET_COOKIE_KEY=asdsafsdvevscsf23wef23re
+GOOGLE_APPLICATION_CREDENTIALS="The absolut path to your serviceAccountKey you downloaded"
+TABLE_ID=dev
+```
+
+### Install dependencies and run it
+
+Go to the code folder
+`cd ./badge-it-up`
+
+Install all dependencies
+`npm install`
+
+Run the code
+`npm run dev`
+
+You will be able to access the survey only with the link and the organisationID
+
+The organisationID is the Document ID we created in Firestore before
+
+It will look the following:
+
+Locally
+`localhost:3000/organisationID`
+
+With url
+`https://your-survey-url/organisationID`
+
+If you do not input the organisationID, the survey tool will simply return a 404 page
+
+This was implemented so that we could send the survey to multiple organisations and collect answers on an organisational basis as well as individual basis.
+
+## Todo
+
+- Test that all the steps actually work
+- Create templates to easier deploy on GCP
+- Document the code
+
 ## Contributing
 
 1. Fork it!
@@ -260,7 +326,7 @@ The thesis can be read here: INSERT LINK TO THESIS
 
 The MIT License (MIT)
 
-Copyright (c) 2023 Kim Siebeneicher and Edit Söderqvist
+Copyright (c) 2015 Chris Kibble
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
