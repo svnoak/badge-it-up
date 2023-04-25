@@ -1,0 +1,24 @@
+.confetti {
+    background-image: url('/confetti.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.backdrop {
+    height: 100vh;
+    width: 100vw;
+    background-color:rgba(0,0,0,.5);
+    position: fixed; 
+    overflow: hidden;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+}

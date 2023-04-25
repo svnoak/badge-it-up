@@ -1,0 +1,10 @@
+.menuItem {
+  font-size: 11pt;
+  letter-spacing: 0;
+  line-height: 32px;
+}
+
+.select {
+  font-weight: 400;
+  height: 48px;
+}
