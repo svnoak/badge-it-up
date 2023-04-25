@@ -59,6 +59,8 @@ In this step we need to set up our collections properly to be able to load the d
     - `gamified` (type number) = `0` // How many have gotten the gamified survey (updates automatically)
     - `respondents` (type number) = `0` // How many have started the survey in total (updates automatically)
 
+    **THIS DOCUMENT ID IS NEEDED TO ACCESS THE SURVEY LATER ON!**
+
 #### **Respondents**
 
 1. Click on *START COLLECTION*
@@ -270,6 +272,33 @@ SECRET_COOKIE_KEY=asdsafsdvevscsf23wef23re
 GOOGLE_APPLICATION_CREDENTIALS="The absolut path to your serviceAccountKey you downloaded"
 TABLE_ID=dev
 ```
+
+### Install dependencies and run it
+
+Go to the code folder
+`cd ./badge-it-up`
+
+Install all dependencies
+`npm install`
+
+Run the code
+`npm run dev`
+
+You will be able to access the survey only with the link and the organisationID
+
+The organisationID is the Document ID we created in Firestore before
+
+It will look the following:
+
+Locally
+`localhost:3000/organisationID`
+
+With url
+`https://your-survey-url/organisationID`
+
+If you do not input the organisationID, the survey tool will simply return a 404 page
+
+This was implemented so that we could send the survey to multiple organisations and collect answers on an organisational basis as well as individual basis.
 
 ## Todo
 
