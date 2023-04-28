@@ -1,9 +1,9 @@
-# Badge It Up - Survey Tool
+# Badge It Up - Gamification Survey Tool
 
 The Badge It Up Survey Tool is a survey software created to track and analyse the effect of badges on respondents.
 The survey tool is created to be hosted on Google Cloud Platform for easy deployment and uses only Google Cloud services at the time being.
 
-This survey tool was created for Kim Siebeneicher's and Edit Söderqvist's Bachelor's Thesis "Badge it up - XXXXX"
+This survey tool was created for Kim Siebeneicher's and Edit Söderqvist's Bachelor's Thesis "Badge it up - The Effect of Gamification on Online Survey Response"
 The thesis analysed the effects of badges on the respondents with the help of this tool.
 
 Badge It Up - Survey tool offers a few key features:
