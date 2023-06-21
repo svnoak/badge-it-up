@@ -345,7 +345,7 @@ Lead Developer - Kim Siebeneicher ([@svnoak](https://github.com/svnoak))
 
 Badge design and mechanics - Edit Söderqvist - ([LinkedIn](https://www.linkedin.com/in/editsoderqvist/))
 
-The thesis can be read here: INSERT LINK TO THESIS
+The thesis can be read on [DiVa](https://www.diva-portal.org/smash/record.jsf?pid=diva2:1770142)
 
 ## License
 
